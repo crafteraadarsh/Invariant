@@ -1,2 +1,1 @@
-Tester:test(string) (runs: 256, μ: 47361, ~: 24565)
-TesterTest:testTest() (gas: 27613)
+InvariantDeposit:invariant_alwaysWithdrawable() (runs: 256, calls: 3840, reverts: 6)
