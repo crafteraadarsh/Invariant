@@ -14,4 +14,7 @@ contract Deposit {
         (bool s, ) = msg.sender.call{value: amount}("");
         require(s, "failed to send");
     }
+   function changeBalance(address depositor, uint amount) public {
+        balance[depositor] = amount;
+}
 }
