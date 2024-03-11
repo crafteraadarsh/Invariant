@@ -33,20 +33,3 @@ test
 ## License
 
 See [LICENSE](./LICENSE) for more details.
-## What's Happening Here?
-
-This contract is an invariant test for the `Deposit` contract, which allows anyone to deposit and withdraw ether. The invariant being tested is that any amount deposited should be withdraw-able by the same person and the same amount.
-
-The `setUp` function creates a new instance of the `Deposit` contract and sends it 100 ether. It also sets the `depositor` to the address of the test contract.
-
-The `invariant_alwaysWithdrawable` function tests that the depositor can withdraw the ether they deposited and that the same amount is withdrawn as was deposited. It does this by depositing 1 ether, checking the depositor's balance before and after the withdraw, and asserting that the balance before the withdraw is greater than the balance after.
-
-The `receive` function is used to handle incoming ether during the test.
-
-The `vm.deal` function is used to send ether to the `Deposit` contract during the setUp function. The `assertEq` function is used to check that two values are equal, and the `assertGt` function is used to check that one value is greater than another value.
-
-## How is this Different from Fuzzing?
-
-This is an invariant test because it checks that a certain property of the `Deposit` contract always holds, specifically that any amount deposited should be withdraw-able by the same person and the same amount. 
-
-It is not a `fuzz` test because it does not test the contract's behavior under different inputs or conditions, but rather checks that a specific property of the contract always holds.
